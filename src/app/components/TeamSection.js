@@ -183,10 +183,10 @@ const TeamSection = () => {
               />
             </span>
           </div>
-          <h2 className="md:text-[7.094vw] text-[15.5vw] leading-[90%] tracking-[-0.04em] text-white font-[600]">
+          <h2 className="lg:text-[7.094vw] md:text-[12.207vw] text-[13vw] leading-[90%] tracking-[-0.04em] text-white font-[600]">
             The Runway Crew
           </h2>
-          <p className="text-[25px] tracking-[-0.02em] leading-[125%] font-[400] text-orangish">
+          <p className="lg:text-[1.736vw] md:text-[2.441vw] text-[4.8vw] tracking-[-0.02em] leading-[125%] font-[400] text-orangish">
             The people behind the pixels.
           </p>
         </div>
