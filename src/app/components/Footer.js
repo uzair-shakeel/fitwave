@@ -2,8 +2,11 @@ import { IoMdArrowForward, IoMdArrowRoundForward } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer className="max-w-[1920px] mx-auto bg-transparent text-white px-[15px] py-[15px]">
-      <div className="max-w-[95.556vw] mx-auto mb-[3.819vw]">
+    <footer className="max-w-[1920px] mx-auto bg-transparent text-white py-[15px]">
+      <div className="h-[2.083vw] bg-[#dd8411] w-full rounded-t-[1.389vw]"></div>
+      <div className="h-[2.083vw] bg-[#f9a600] w-full"></div>
+      <div className="h-[2.083vw] bg-[#ffc655] w-full"></div>
+      <div className="max-w-[95.556vw] mx-auto mb-[3.819vw] mt-[7.5vw] px-[15px]">
         <svg
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +39,7 @@ const Footer = () => {
           ></path>
         </svg>
       </div>
-      <div className="mx-auto flex flex-col gap-[0.694vw] md:flex-row justify-between">
+      <div className="mx-auto flex flex-col gap-[0.694vw] md:flex-row justify-between px-[15px]">
         <div className="bg-[#f9a600] flex flex-grow flex-col text-gray-900 pt-[15px] rounded-[1.389vw] md:max-w-[27.153vw] min-h-full justify-between">
           <div className="flex flex-col gap-[7px]">
             <div className="flex justify-center items-center bg-[#192227] rounded-full w-[3.472vw] h-[3.472vw] mx-[15px]">
