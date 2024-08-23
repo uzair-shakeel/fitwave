@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="max-w-[1920px] mx-auto bg-transparent px-[15px]">
       <div className="fixed top-[0.556vw] left-0 px-[15px] w-full flex gap-[6px] justify-center items-center h-[2.431vw] bg-orangish rounded-full text-center">
-        <p className="text-[1.042vw] text-transparent text-blackish font-[600] tracking-[-0.02em]">
+        <p className="text-[1.042vw] text-blackish font-[600] tracking-[-0.02em]">
           We’ve officially launched! Learn more
         </p>
         <span className="flex justify-center items-center bg-[#192227] rounded-full w-[17px] h-[17px]">
