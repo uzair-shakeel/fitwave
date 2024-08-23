@@ -3,20 +3,20 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 
 const Header = () => {
   return (
-    <header class="text-gray-600 bg-transparent px-[15px]">
+    <header className="max-w-[1920px] mx-auto text-gray-600 bg-transparent px-[15px]">
       <div
-        class="max-w-[1200px] mx-auto flex flex-wrap py-[0.556vw] flex-col md:flex-row items-center gap-[2.222vw]"
+        className="flex flex-wrap py-[0.556vw] flex-col md:flex-row items-center gap-[2.222vw]"
         bis_skin_checked="1"
       >
         <Link
           href="/"
-          class="flex title-font font-medium items-center text-white mb-4 md:mb-0 max-h-[18px] max-w-[80px]"
+          className="flex title-font font-medium items-center text-white mb-4 md:mb-0 max-h-[18px] max-w-[80px]"
         >
           <svg
             fill="#ffffff"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1377 277"
-            class="Header__Logo-sc-j3a33k-6 hsEhtX h-full w-full"
+            className="Header__Logo-sc-j3a33k-6 hsEhtX h-full w-full"
           >
             <path
               d="M555.167 233.069C561.354 233.069 566.722 228.799 568.114 222.771L592.9 115.41C606.916 53.8104 562.477 1.47659 502.66 1.47656L500.567 1.47656C452.024 1.47656 414.699 31.3667 404.957 73.5644L368.133 233.069H418.942C425.123 233.069 430.487 228.807 431.885 222.786L463.217 87.8141C467.532 69.5672 484.226 57.9473 499.15 57.9474L499.259 57.9473C520.622 57.9474 540.074 78.6146 533.638 106.123L504.371 233.069H555.167Z"
@@ -44,37 +44,37 @@ const Header = () => {
             ></path>
           </svg>
         </Link>
-        <nav class="md:ml-auto flex flex-wrap text-[1.042vw] font-[600] tracking-[-0.02em] items-center justify-center text-[#fdfcfc] gap-[3.125vw]">
+        <nav className="md:ml-auto flex flex-wrap text-[1.042vw] font-[600] tracking-[-0.02em] items-center justify-center text-[#fdfcfc] gap-[3.125vw]">
           <Link
             href="/"
-            class="flex items-center gap-[0.521vw] hover:text-gray-100"
+            className="flex items-center gap-[0.521vw] hover:text-gray-100"
           >
-            <IoMdArrowRoundForward size={12} /> Product
+            <IoMdArrowRoundForward size={16} /> Product
           </Link>
           <Link
             href="/"
-            class="flex items-center gap-[0.521vw] hover:text-gray-100"
+            className="flex items-center gap-[0.521vw] hover:text-gray-100"
           >
-            <IoMdArrowRoundForward size={12} /> Customers
+            <IoMdArrowRoundForward size={16} /> Customers
           </Link>
           <Link
             href="/about"
-            class="flex items-center gap-[0.521vw] hover:text-gray-100"
+            className="flex items-center gap-[0.521vw] hover:text-gray-100"
           >
-            <IoMdArrowRoundForward size={12} /> Resources
+            <IoMdArrowRoundForward size={16} /> Resources
           </Link>
           <Link
             href="/"
-            class="flex items-center gap-[0.521vw] hover:text-gray-100"
+            className="flex items-center gap-[0.521vw] hover:text-gray-100"
           >
-            <IoMdArrowRoundForward size={12} /> Login
+            <IoMdArrowRoundForward size={16} /> Login
           </Link>
         </nav>
-        <button class="inline-flex gap-[0.694vw] bg-[#f9a600] items-center py-[0.694vw] px-[1.042vw] text-[#192227] rounded-full mt-4 md:mt-0">
+        <button className="inline-flex gap-[0.694vw] bg-[#f9a600] items-center py-[0.694vw] px-[1.042vw] text-[#192227] rounded-full mt-4 md:mt-0">
           <span className="text-[1.042vw] font-[600] tracking-[-0.02em]">
             Get Access{" "}
           </span>{" "}
-          <IoMdArrowRoundForward size={12} />
+          <IoMdArrowRoundForward size={16} />
         </button>
       </div>
     </header>

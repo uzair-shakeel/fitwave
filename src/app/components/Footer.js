@@ -2,8 +2,8 @@ import { IoMdArrowForward, IoMdArrowRoundForward } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer className="bg-transparent text-white px-[15px] py-[15px]">
-      <div className="w-[95.556vw] mx-auto mb-[3.819vw]">
+    <footer className="max-w-[1920px] mx-auto bg-transparent text-white px-[15px] py-[15px]">
+      <div className="max-w-[95.556vw] mx-auto mb-[3.819vw]">
         <svg
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ const Footer = () => {
           ></path>
         </svg>
       </div>
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-[0.694vw] md:flex-row justify-between">
+      <div className="mx-auto flex flex-col gap-[0.694vw] md:flex-row justify-between">
         <div className="bg-[#f9a600] flex flex-grow flex-col text-gray-900 pt-[15px] rounded-[1.389vw] md:max-w-[27.153vw] min-h-full justify-between">
           <div className="flex flex-col gap-[7px]">
             <div className="flex justify-center items-center bg-[#192227] rounded-full w-[3.472vw] h-[3.472vw] mx-[15px]">
@@ -53,8 +53,10 @@ const Footer = () => {
               </svg>
             </div>
 
-            <div className="font-[600] text-[2.431vw] max-w-[280px] tracking-[-0.03em] text-[#192227] mt-2 leading-[90%] px-[15px]">
-              Business planning, for humans.
+            <div className="font-[600] text-[2.431vw] max-w-[350px] tracking-[-0.03em] text-[#192227] mt-2 leading-[90%] px-[15px]">
+              <p className="flex-grow flex w-full">
+                Business planning, for humans.
+              </p>
             </div>
           </div>
           <div>
