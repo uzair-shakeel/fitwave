@@ -192,13 +192,13 @@ const TeamSection = () => {
         </div>
 
         {/* Team Members */}
-        <div className="flex flex-wrap justify-center xl:gap-x-[158px] gap-x-[15.43vw] xl:gap-y-[105px] gap-y-[10.254vw] mt-[100px]">
+        <div className="flex flex-wrap justify-center xl:gap-x-[158px] sm:gap-x-[15.43vw] xl:gap-y-[105px] sm:gap-0 gap-[17.333vw] sm:gap-y-[10.254vw] mt-[100px]">
           {teamData.map((member, index) => (
             <div
               key={index}
-              className="text-center xl:w-[22.5%] lg:w-[30%] sm:w-[45%] w-[90%] flex flex-col items-center mb-[20px]"
+              className="text-center xl:w-[13.5%] sm:w-[18%] w-[39%] flex flex-col items-center mb-[20px]"
             >
-              <div className="w-full h-[250px] mx-auto rounded-t-[99vw] rounded-b-[99vw] overflow-hidden mb-[1.389vw]">
+              <div className="xl:w-[11.25vw] w-[15.82vw] xl:h-[250px] lg:h-[240px] mx-auto rounded-t-[99vw] rounded-b-[99vw] overflow-hidden mb-[1.389vw]">
                 <img
                   src={member.imgSrc}
                   alt={member.name}
