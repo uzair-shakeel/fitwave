@@ -175,9 +175,9 @@ const TeamSection = () => {
         <div className="max-w-[538px] flex flex-col gap-[30px] mb-[30px]">
           {/* Icon and Heading */}
           <div className="flex justify-center items-center w-fit  bg-orangish rounded-full mb-[-10px]">
-            <span className="w-[54px] h-[54px] p-[5px]">
+            <span className="w-[54px] h-[54px] p-[5px] flex items-center justify-center">
               <img
-                className="w-full h-full"
+                className="w-[90%] h-[90%]"
                 src="/assets/team.svg"
                 alt="team-img"
               />
