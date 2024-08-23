@@ -172,9 +172,9 @@ const TeamSection = () => {
   return (
     <section className="max-w-[1920px] text-white pt-[200px] xl:px-[130px] px-[8.984vw] xl:pb-[140px] pb-[13.672vw]">
       <div className="mx-auto">
-        <div className="w-[40.347vw] flex flex-col gap-[30px] mb-[30px]">
+        <div className="max-w-[538px] flex flex-col gap-[30px] mb-[30px]">
           {/* Icon and Heading */}
-          <div className="flex justify-center items-center w-[5.228vw] h-[5.228vw] bg-orangish rounded-full mb-[-10px]">
+          <div className="flex justify-center items-center w-fit  bg-orangish rounded-full mb-[-10px]">
             <span className="w-[54px] h-[54px] p-[5px]">
               <img
                 className="w-full h-full"
@@ -183,7 +183,7 @@ const TeamSection = () => {
               />
             </span>
           </div>
-          <h2 className="text-[105px] leading-[90%] tracking-[-0.04em] text-white font-[600]">
+          <h2 className="md:text-[7.094vw] text-[15.5vw] leading-[90%] tracking-[-0.04em] text-white font-[600]">
             The Runway Crew
           </h2>
           <p className="text-[25px] tracking-[-0.02em] leading-[125%] font-[400] text-orangish">
