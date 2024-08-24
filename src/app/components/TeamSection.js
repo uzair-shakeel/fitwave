@@ -170,7 +170,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="max-w-[1920px] text-white pt-[200px] xl:px-[130px] px-[8.984vw] xl:pb-[140px] pb-[13.672vw]">
+    <section className="max-w-[1920px] mx-auto text-white pt-[200px] xl:px-[130px] px-[8.984vw] xl:pb-[140px] pb-[13.672vw]">
       <div className="mx-auto">
         <div className="lg:w-[40.347vw] md:w-[72.852vw] flex flex-col gap-[30px] mb-[30px]">
           {/* Icon and Heading */}
@@ -198,7 +198,7 @@ const TeamSection = () => {
               key={index}
               className="text-center xl:w-[13.5%] sm:w-[18%] w-[39%] flex flex-col items-center mb-[20px]"
             >
-              <div className="xl:w-[11.25vw] w-[15.82vw] xl:h-[250px] lg:h-[240px] mx-auto rounded-t-[99vw] rounded-b-[99vw] overflow-hidden mb-[1.389vw]">
+              <div className="xl:w-[11.25vw] w-[15.82vw] xl:h-[250px] lg:h-[240px] max-w-[600px] mx-auto rounded-t-[99vw] rounded-b-[99vw] overflow-hidden mb-[1.389vw]">
                 <img
                   src={member.imgSrc}
                   alt={member.name}

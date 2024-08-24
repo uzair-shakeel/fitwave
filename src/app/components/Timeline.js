@@ -3,7 +3,7 @@ import TimelineCard from "./TimelineCard";
 
 const Timeline = () => {
   return (
-    <div className="flex flex-col gap-[17.361vw] py-[160px]">
+    <div className="max-w-[1920px] mx-auto flex flex-col gap-[17.361vw] py-[160px]">
       <TimelineCard
         imageSrc="/assets/timeline-img1.webp"
         heading="Why do we care so much?"
