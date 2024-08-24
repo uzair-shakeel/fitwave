@@ -172,7 +172,7 @@ const TeamSection = () => {
   return (
     <section className="max-w-[1920px] text-white pt-[200px] xl:px-[130px] px-[8.984vw] xl:pb-[140px] pb-[13.672vw]">
       <div className="mx-auto">
-        <div className="max-w-[538px] flex flex-col gap-[30px] mb-[30px]">
+        <div className="lg:w-[40.347vw] md:w-[72.852vw] flex flex-col gap-[30px] mb-[30px]">
           {/* Icon and Heading */}
           <div className="flex justify-center items-center w-fit  bg-orangish rounded-full mb-[-10px]">
             <span className="w-[54px] h-[54px] p-[5px] flex items-center justify-center">
