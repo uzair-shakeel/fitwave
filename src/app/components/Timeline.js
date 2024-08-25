@@ -23,7 +23,7 @@ const Timeline = () => {
       </TimelineCard>
 
       <TimelineCard
-        imageSrc="/assets/timeline-img1.webp"
+        imageSrc="/assets/timeline-img2.webp"
         heading="Finance has always made me feel insecure"
       >
         <p className="text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em] text-white">
@@ -38,7 +38,7 @@ const Timeline = () => {
       </TimelineCard>
 
       <TimelineCard
-        imageSrc="/assets/timeline-img1.webp"
+        imageSrc="/assets/timeline-img3.webp"
         heading="Fast Forward"
       >
         <p className="text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em] text-white">
@@ -54,7 +54,7 @@ const Timeline = () => {
       </TimelineCard>
 
       <TimelineCard
-        imageSrc="/assets/timeline-img1.webp"
+        imageSrc="/assets/timeline-img4.webp"
         heading="Is this the best we can do?"
       >
         <p className="text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em] text-white">
@@ -74,7 +74,7 @@ const Timeline = () => {
       </TimelineCard>
 
       <TimelineCard
-        imageSrc="/assets/timeline-img1.webp"
+        imageSrc="/assets/timeline-img5.webp"
         heading="Getting off the ground"
       >
         <p className="text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em] text-white">
@@ -89,7 +89,7 @@ const Timeline = () => {
       </TimelineCard>
 
       <TimelineCard
-        imageSrc="/assets/timeline-img1.webp"
+        imageSrc="/assets/timeline-img6.webp"
         heading="Encountering turbulence"
       >
         <p className="text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em] text-white">
@@ -107,7 +107,7 @@ const Timeline = () => {
       </TimelineCard>
 
       <TimelineCard
-        imageSrc="/assets/timeline-img1.webp"
+        imageSrc="/assets/timeline-img7.webp"
         heading="Building a culture of shared values"
       >
         <p className="text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em] text-white">
@@ -174,7 +174,7 @@ const Timeline = () => {
       </TimelineCard>
 
       <TimelineCard
-        imageSrc="/assets/timeline-img1.webp"
+        imageSrc="/assets/timeline-img8.webp"
         heading="Runway Today"
       >
         <p className="text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em] text-white">
