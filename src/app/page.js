@@ -2,13 +2,14 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/home/Hero";
 import GetStarted from "./components/home/GetStarted";
+import DesignedForFinance from "./components/DesignedForFinance";
+import BuiltForExecutives from "./components/BuiltForExecutives";
 
 export default function Home() {
   return (
     <div className="bg-[#192227]">
       <Header />
       <HeroSection />
-      <GetStarted />
       <div className="lg:w-[40.347vw] md:w-[72.852vw] flex flex-col mb-[30px] py-[27.778vw] ps-[3.125vw]">
         {/* Icon and Heading */}
         <div className="flex justify-center items-center w-fit  bg-orangish rounded-full mb-[-10px]">
@@ -34,7 +35,9 @@ export default function Home() {
           experience designed for everyone on your team.
         </p>
       </div>
-
+      <DesignedForFinance />
+      <BuiltForExecutives />
+      <GetStarted />
       <Footer />
     </div>
   );
