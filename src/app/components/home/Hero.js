@@ -4,22 +4,13 @@ import Image from "next/image";
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [imageExpanded, setImageExpanded] = useState(false);
 
   const handleScroll = () => {
     const maxScroll = 500; // Adjust this to control how much the user can scroll to expand the image
-    const currentScroll = Math.min(window.scrollY, maxScroll);
+    const currentScroll = window.scrollY;
 
-    if (currentScroll < maxScroll) {
-      setScrollY(currentScroll);
-    } else {
-      setImageExpanded(true);
-    }
-
-    // Prevent scrolling past the maxScroll point
-    if (window.scrollY > maxScroll) {
-      window.scrollTo(0, maxScroll);
-    }
+    // Update scrollY state only until maxScroll
+    setScrollY(Math.min(currentScroll, maxScroll));
   };
 
   useEffect(() => {
