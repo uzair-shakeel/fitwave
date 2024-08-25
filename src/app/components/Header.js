@@ -27,7 +27,7 @@ const Header = () => {
           href="/"
           className="flex title-font font-medium items-center text-white mb-4 md:mb-0"
         >
-          <img className="h-[40px] w-auto" src="/assets/logo.png" alt="logo" />
+          <img className="h-[25px] w-auto" src="/assets/logo.png" alt="logo" />
         </Link>
         <nav className="md:ml-auto flex flex-wrap text-[1.042vw] font-[600] tracking-[-0.02em] items-center justify-center text-[#fdfcfc] gap-[3.125vw]">
           <Link
