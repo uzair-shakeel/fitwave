@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-blackish">
+    <div className="min-h-screen flex justify-center items-center bg-blue-300">
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden flex">
         {/* Left Section */}
         <div className="w-2/3 p-8 bg-yellow-500 flex flex-col justify-between">

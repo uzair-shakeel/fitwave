@@ -2,8 +2,9 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/home/Hero";
 import GetStarted from "./components/home/GetStarted";
-import DesignedForFinance from "./components/DesignedForFinance";
-import BuiltForExecutives from "./components/BuiltForExecutives";
+import DesignedForFinance from "./components/home/DesignedForFinance";
+import BuiltForExecutives from "./components/home/BuiltForExecutives";
+import Cards from "./components/home/Cards";
 
 export default function Home() {
   return (
@@ -37,6 +38,18 @@ export default function Home() {
       </div>
       <DesignedForFinance />
       <BuiltForExecutives />
+      <div className="bg-blackish py-16 max-w-[1920px] mx-auto xl:ps-[200px] ps-[8.984vw] pe-[15px]">
+        <h2 className="text-white text-[7.292vw] font-[600] leading-[90%] tracking-[-0.04em] mb-[1.528vw] max-w-[50.694vw] pt-[0.694vw]">
+          Built for Executives
+        </h2>
+        <p className="text-white pt-[0.694vw] max-w-[54.583vw] text-[1.528vw] font-[400] leading-[125%] tracking-[-0.02em]">
+          Runway's mission is to make your business accessible and
+          understandable to everyone—from finance to engineering. That starts
+          with an intuitive, responsive, and thoughtfully designed user
+          experience that helps everyone understand how to make an impact.
+        </p>
+      </div>
+      <Cards />
       <GetStarted />
       <Footer />
     </div>
