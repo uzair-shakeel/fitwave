@@ -2,7 +2,7 @@ import { IoMdArrowForward, IoMdArrowRoundForward } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#192227] rounded-t-[1.389vw]">
+    <footer className="bg-blackish rounded-t-[1.389vw]">
       <div className="max-w-[1920px] mx-auto text-white pb-[15px]">
         <div className="h-[2.083vw] bg-[#dd8411] w-full rounded-t-[1.389vw]"></div>
         <div className="h-[2.083vw] bg-[#f9a600] w-full"></div>
