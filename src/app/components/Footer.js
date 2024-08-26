@@ -33,7 +33,7 @@ const Footer = () => {
       ".footer-line-2",
       { width: "6%", right: "0" },
       { width: "100%", duration: 3 },
-      "-=2" // Starts 2 seconds before the previous animation ends
+      "-=1" // Starts 2 seconds before the previous animation ends
     );
 
     // Animate the third line
@@ -41,16 +41,16 @@ const Footer = () => {
       ".footer-line-3",
       { width: "9%", right: "0" },
       { width: "100%", duration: 3 },
-      "-=2" // Starts 2 seconds before the previous animation ends
+      "-=1" // Starts 2 seconds before the previous animation ends
     );
   }, []);
 
   return (
     <footer className="bg-[#192227]">
       <div className="max-w-[1920px] mx-auto text-white py-[15px]">
-        <div className="h-[2.083vw] bg-[#dd8411] w-full rounded-t-[1.389vw]"></div>
-        <div className="h-[2.083vw] bg-[#f9a600] w-full"></div>
-        <div className="h-[2.083vw] bg-[#ffc655] w-full"></div>
+        <div className="footer-line h-[2.083vw] bg-[#dd8411] w-full rounded-t-[1.389vw]"></div>
+        <div className="footer-line-2 h-[2.083vw] bg-[#f9a600] w-full"></div>
+        <div className="footer-line-3 h-[2.083vw] bg-[#ffc655] w-full"></div>
         <div className="max-w-[95.556vw] mx-auto mb-[3.819vw] mt-[7.5vw] px-[15px]">
           <img className="w-[100%]" src="/assets/logo.png" alt="logo" />
         </div>
