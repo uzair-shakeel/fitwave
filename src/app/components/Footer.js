@@ -48,9 +48,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#192227]">
       <div className="max-w-[1920px] mx-auto text-white py-[15px]">
-        <div className="footer-line h-[2.083vw] bg-[#dd8411]  rounded-t-[1.389vw]"></div>
-        <div className="footer-line-2 h-[2.083vw] bg-[#f9a600] "></div>
-        <div className="footer-line-3 h-[2.083vw] bg-[#ffc655] "></div>
+        <div className="h-[2.083vw] bg-[#dd8411] w-full rounded-t-[1.389vw]"></div>
+        <div className="h-[2.083vw] bg-[#f9a600] w-full"></div>
+        <div className="h-[2.083vw] bg-[#ffc655] w-full"></div>
         <div className="max-w-[95.556vw] mx-auto mb-[3.819vw] mt-[7.5vw] px-[15px]">
           <img className="w-[100%]" src="/assets/logo.png" alt="logo" />
         </div>
