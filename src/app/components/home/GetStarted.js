@@ -1,106 +1,115 @@
-import Image from "next/image";
+// components/GetStarted.js
+import React from "react";
 
-export default function Home() {
+const GetStarted = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-blue-300">
-      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden flex">
+    <div className="w-[94.444vw] mx-auto flex justify-center items-center min-h-screen py-[150px]">
+      <div className="bg-white shadow-lg flex overflow-hidden rounded-[1.389vw]">
         {/* Left Section */}
-        <div className="w-2/3 p-8 bg-yellow-500 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between">
-              <h1 className="text-4xl font-bold">Let's get started</h1>
-              <Image
-                src="/path-to-your-icon.png"
-                alt="icon"
-                width={50}
-                height={50}
-                className="rounded-full"
-              />
-            </div>
+        <div className="bg-yellow-500 p-6 flex flex-col justify-between items-center">
+          <img src="/assets/barcode.webp" alt="barcode" />
+        </div>
 
-            <div className="mt-4 text-gray-600 flex items-center space-x-2">
-              <span>XLS</span>
-              <span>✈️</span>
-              <span>RNW</span>
+        {/* Main Content */}
+        <div className="flex flex-col justify-between p-8">
+          <div className="flex items-center justify-between">
+            <h1 className="text-4xl font-bold">Let's get started</h1>
+            <div className="w-12 h-12 rounded-full flex justify-center items-center bg-gradient-to-r from-purple-400 to-blue-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-6 h-6 text-white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
             </div>
-
-            <div className="mt-8">
-              <div className="flex justify-between text-gray-600">
-                <span>Status</span>
-                <span>Seat</span>
-                <span>Group</span>
-              </div>
-              <div className="flex justify-between font-bold text-xl mt-2">
-                <span>Now Boarding</span>
-                <span>1A</span>
-                <span>First Class</span>
-              </div>
-            </div>
-
-            <p className="mt-8 text-sm text-gray-700">
-              Runway's white glove service and intuitive design will get you up
-              and running in a matter of hours—not weeks or months. Complex
-              models welcome—we’ve seen it all.
-            </p>
           </div>
 
-          <div className="mt-8">
-            <div className="bg-white w-16 h-16 p-2">
-              <Image
-                src="/path-to-your-qr-code.png"
-                alt="QR Code"
-                width={50}
-                height={50}
-              />
+          <div className="flex justify-between mt-8">
+            <div>
+              <p className="uppercase text-gray-500">Status</p>
+              <p className="text-xl font-bold">NOW BOARDING</p>
             </div>
-            <p className="text-xs text-gray-600 mt-2">
-              We’ll use the information you provide consistent with our{" "}
-              <a href="#" className="underline">
-                Privacy Policy
-              </a>
-              .
+            <div className="text-center">
+              <p className="uppercase text-gray-500">Seat</p>
+              <p className="text-xl font-bold">1A</p>
+            </div>
+            <div className="text-right">
+              <p className="uppercase text-gray-500">Group</p>
+              <p className="text-xl font-bold">FIRST CLASS</p>
+            </div>
+          </div>
+
+          <div className="mt-6 flex items-center">
+            <div className="w-20 h-20 bg-black text-white flex items-center justify-center">
+              <p className="text-xs">QR CODE</p>
+            </div>
+            <p className="ml-4 text-sm text-gray-500">
+              Runway's white glove service and intuitive design will get you up
+              and running in a matter of hours—not weeks or months. Complex
+              models welcome—we've seen it all.
             </p>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="w-1/3 p-8 bg-blue-50 flex flex-col justify-between">
-          <div className="space-y-4">
-            <div className="text-right">
-              <p className="text-gray-600"># RNW9170</p>
-              <p className="text-gray-600">DATE: 26 AUG. 2024</p>
-            </div>
+        <div className="bg-blue-100 p-8 flex flex-col justify-between">
+          <div className="flex justify-between items-center">
+            <p className="text-gray-500"># RNW5147</p>
+            <p className="text-gray-500">DATE 26 AUG. 2024</p>
+          </div>
 
+          <div className="mt-6">
             <input
+              className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
               type="text"
               placeholder="First Name"
-              className="w-full px-4 py-2 border rounded"
             />
             <input
+              className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
               type="text"
               placeholder="Last Name"
-              className="w-full px-4 py-2 border rounded"
             />
             <input
+              className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
               type="email"
               placeholder="Work Email"
-              className="w-full px-4 py-2 border rounded"
             />
             <input
+              className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
               type="text"
               placeholder="Job Title"
-              className="w-full px-4 py-2 border rounded"
             />
           </div>
 
-          <div className="mt-8">
-            <button className="w-full bg-yellow-500 text-white py-3 rounded-lg font-bold flex items-center justify-center">
-              Get Access
-              <span className="ml-2">➔</span>
-            </button>
-          </div>
+          <button className="bg-yellow-500 text-white py-3 mt-4 flex items-center justify-center rounded">
+            Get Access
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6 ml-2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default GetStarted;
