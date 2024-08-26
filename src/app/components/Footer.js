@@ -105,7 +105,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="mt-8 md:mt-0 flex flex-grow rounded-[1.389vw] border border-[#fdfcfc]">
+          <div className="mt-8 md:mt-0 flex flex-grow rounded-[1.389vw] border border-[#fdfcfc] overflow-hidden">
             <ul className="w-full">
               {[
                 "Get Access",
@@ -117,14 +117,16 @@ const Footer = () => {
                 "LinkedIn",
                 "YouTube",
                 "Instagram",
-              ].map((item) => (
+              ].map((item, index) => (
                 <li
                   key={item}
-                  className="flex justify-between items-center h-[3.819vw] px-[2.083vw] border-t border-gray-700"
+                  className={`flex justify-between items-center h-[3.819vw] px-[2.083vw] ${
+                    index !== 0 ? "border-t border-gray-700" : ""
+                  } hover:bg-orangish hover:text-blackish transition duration-300`}
                 >
                   <a
                     href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="hover:underline text-[18px] font-[600] tracking-[-0.03em]"
+                    className="text-[18px] font-[600] tracking-[-0.03em]"
                   >
                     {item}
                   </a>
