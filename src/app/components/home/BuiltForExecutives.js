@@ -33,7 +33,7 @@ const BuiltForExecutives = () => {
   ];
 
   return (
-    <div className="bg-blackish py-16 max-w-[1920px] mx-auto xl:ps-[200px] ps-[8.984vw] pe-[15px]">
+    <div className="bg-blackish py-16 mx-auto xl:ps-[200px] ps-[8.984vw] pe-[15px]">
       <h2 className="text-white text-[7.292vw] font-[600] leading-[90%] tracking-[-0.04em] mb-[1.528vw] max-w-[50.694vw] pt-[0.694vw]">
         Built for Executives
       </h2>

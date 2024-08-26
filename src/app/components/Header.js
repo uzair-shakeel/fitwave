@@ -3,7 +3,7 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 
 const Header = () => {
   return (
-    <header className="max-w-[1920px] mx-auto bg-transparent px-[15px]">
+    <header className="max-w-[1920px] mx-auto bg-transparent px-[15px] bg-blackish">
       <div className="fixed top-[0.556vw] left-0 px-[15px] w-full z-[999]">
         <div className="px-[15px] w-full flex gap-[6px] justify-center items-center h-[2.431vw] bg-orangish rounded-full text-center">
           <p className="text-[1.042vw] text-blackish font-[600] tracking-[-0.02em]">
