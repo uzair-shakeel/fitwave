@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="bg-[#192227]">
       <Header />
-      <HeroSection />
+      {/* <HeroSection /> */}
       <GetStarted />
       <div className="lg:w-[40.347vw] md:w-[72.852vw] flex flex-col mb-[30px] py-[27.778vw] ps-[3.125vw]">
         {/* Icon and Heading */}
