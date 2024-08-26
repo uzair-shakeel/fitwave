@@ -39,19 +39,19 @@ const Header = () => {
             <IoMdArrowRoundForward size={16} /> Product
           </Link>
           <Link
-            href="/"
+            href="/about"
             className="flex items-center gap-[0.521vw] hover:text-gray-100"
           >
             <IoMdArrowRoundForward size={16} /> About
           </Link>
           <Link
-            href="/about"
+            href="/contact"
             className="flex items-center gap-[0.521vw] hover:text-gray-100"
           >
             <IoMdArrowRoundForward size={16} /> Contact
           </Link>
           <Link
-            href="/contact"
+            href="/"
             className="flex items-center gap-[0.521vw] hover:text-gray-100"
           >
             <IoMdArrowRoundForward size={16} /> Log in
