@@ -13,7 +13,6 @@ const HeroSection = () => {
         start: "top top", // Start when the top of the trigger hits the top of the viewport
         end: "top 60%", // Increase the end point to create more scroll space for the animation
         scrub: 2, // Smooth scrub
-        markers: true, // Markers for debugging
         pin: true, // Pin the section to simulate a fixed position
         pinSpacing: false, // Remove extra spacing added by pinning
       },
@@ -40,7 +39,6 @@ const HeroSection = () => {
         start: "top top",
         end: "+=2000", // Adjust based on scroll length
         scrub: 2,
-        markers: true,
         pin: true,
         pinSpacing: false,
       },

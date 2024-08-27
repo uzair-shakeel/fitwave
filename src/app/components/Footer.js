@@ -15,7 +15,6 @@ const Footer = () => {
         start: "top 60%", // Adjust this as necessary
         end: "top center",
         toggleActions: "play none none none",
-        markers: true,
         scroller: "body",
         scrub: 5,
       },

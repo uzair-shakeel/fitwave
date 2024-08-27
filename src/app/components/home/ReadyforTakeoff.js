@@ -6,28 +6,50 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const ReadyforTakeoff = () => {
-  const svgPathRef = useRef(null);
+  const pathRef1 = useRef(null);
+  const pathRef2 = useRef(null);
 
   useEffect(() => {
-    // Get the length of the path
-    const pathLength = svgPathRef.current.getTotalLength();
-    // Set initial styles
-    gsap.set(svgPathRef.current, {
-      strokeDasharray: pathLength,
-      strokeDashoffset: pathLength,
-      stroke: "orange",
+    const pathLength1 = pathRef1.current.getTotalLength();
+    const pathLength2 = pathRef2.current.getTotalLength();
+
+    // Initialize pathRef1 with strokeDasharray and strokeDashoffset
+    gsap.set(pathRef1.current, {
+      strokeDasharray: pathLength1,
+      strokeDashoffset: pathLength1, // Start with the path hidden
+      stroke: "#FFC655",
     });
 
-    // GSAP Animation
-    gsap.to(svgPathRef.current, {
-      strokeDashoffset: 0, // Draws the line from start to end
-      stroke: "orange", // Changes the color
+    // Initialize pathRef2 with strokeDasharray and strokeDashoffset
+    gsap.set(pathRef2.current, {
+      strokeDasharray: pathLength2,
+      strokeDashoffset: 0, // Start with the path fully visible
+      stroke: "#DD8411",
+    });
+
+    // Animate pathRef1 from end to start
+    gsap.to(pathRef1.current, {
+      strokeDashoffset: 0, // Animate to fully visible
       duration: 1,
-      ease: "",
+      ease: "none",
       scrollTrigger: {
-        trigger: svgPathRef.current,
+        trigger: pathRef1.current,
         start: "top 99%",
-        end: "bottom 20%",
+        end: "bottom 10%",
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    // Animate pathRef2 from visible to hidden
+    gsap.to(pathRef2.current, {
+      strokeDashoffset: pathLength2, // Animate to fully hidden
+      duration: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: pathRef2.current,
+        start: "top 90%",
+        end: "bottom 10%",
         scrub: true,
         markers: true,
       },
@@ -39,31 +61,49 @@ const ReadyforTakeoff = () => {
       <div className="min-h-screen bg-blackish text-white text-center rounded-[1.389vw] overflow-hidden">
         <h2 className="lg:text-[7.094vw] md:text-[12.207vw] text-[10.069vw] leading-[90%] tracking-[-0.04em] text-white font-[600] py-[2.083vw] w-[53.125vw]">
           Ready for Takeoff
-        </h2>
-        <div className="responsive-container">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 200 300"
-            preserveAspectRatio="none"
-            className="w-full h-full"
-          >
+        </h2>{" "}
+        <p className="lg:text-[1.736vw] md:text-[2.441vw] text-[1.736vw] tracking-[-0.02em] leading-[125%] font-[400] text-orangish my-[3.083vw] w-[33vw]">
+          Runway is ready to help you and your team get off the ground.
+        </p>
+        <svg
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1359 1015"
+          className="sc-06-SocialProof__Paths-sc-pkobnw-11 fwYvts"
+        >
+          <g clipPath="url(#socialPaths_svg__clip0_2777_197741)">
             <path
-              ref={svgPathRef}
-              d="M 190 10 C 190 10, 165 10, 105 10 L 10 10 L 10 250"
-              stroke="white" // Initial stroke color set to white
-              strokeWidth="2"
-              fill="none"
-            />
-          </svg>
-        </div>
+              d="M17.1002 1199.5L17.1002 613.5C17.1002 392.586 196.186 213.5 417.1 213.5L1581.43 213.5"
+              stroke="#4A5357"
+              strokeWidth="30"
+            ></path>
+            <path
+              d="M17.0997 1199.5L17.0997 0"
+              stroke="#4A5357"
+              strokeWidth="30"
+            ></path>
+            <path
+              ref={pathRef1}
+              d="M17.1002 1199.5L17.1002 613.5C17.1002 392.586 196.186 213.5 417.1 213.5L1581.43 213.5"
+              stroke="#FFC655"
+              strokeWidth="30"
+              strokeLinecap="round"
+            ></path>
+            <path
+              ref={pathRef2}
+              d="M17.0997 1199.5L17.0997 0"
+              stroke="#DD8411"
+              strokeWidth="30"
+              strokeLinecap="round"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="socialPaths_svg__clip0_2777_197741">
+              <rect width="1359" height="1015" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
       </div>
-      <h2 className="lg:text-[10.069vw] md:text-[12.207vw] lg:text-[145px] text-[10.069vw] leading-[90%] tracking-[-0.04em] text-white font-[600] my-[2.083vw] w-[53.125vw]">
-        Ready for Takeoff
-      </h2>
-      <p className="lg:text-[1.736vw] md:text-[2.441vw] text-[1.736vw] tracking-[-0.02em] leading-[125%] font-[400] text-orangish my-[3.083vw] w-[33vw]">
-        Runway is ready to help you and your team get off the ground.
-      </p>
     </section>
   );
 };
