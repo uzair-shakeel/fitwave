@@ -23,7 +23,7 @@ const ReadyforTakeoff = () => {
     // Initialize pathRef2 with strokeDasharray and strokeDashoffset
     gsap.set(pathRef2.current, {
       strokeDasharray: pathLength2,
-      strokeDashoffset: 0, // Start with the path fully visible
+      strokeDashoffset: pathLength2, // Start with the path hidden
       stroke: "#DD8411",
     });
 
@@ -35,23 +35,21 @@ const ReadyforTakeoff = () => {
       scrollTrigger: {
         trigger: pathRef1.current,
         start: "top 99%",
-        end: "bottom 10%",
+        end: "top 10%",
         scrub: true,
-        markers: true,
       },
     });
 
-    // Animate pathRef2 from visible to hidden
+    // Animate pathRef2 from top to bottom
     gsap.to(pathRef2.current, {
-      strokeDashoffset: pathLength2, // Animate to fully hidden
-      duration: 1,
+      strokeDashoffset: 0, // Animate to fully visible
+      duration: 0.5,
       ease: "none",
       scrollTrigger: {
         trigger: pathRef2.current,
-        start: "top 90%",
+        start: "top 99%",
         end: "bottom 10%",
         scrub: true,
-        markers: true,
       },
     });
   }, []);
@@ -84,14 +82,14 @@ const ReadyforTakeoff = () => {
             ></path>
             <path
               ref={pathRef1}
-              d="M17.1002 1199.5L17.1002 613.5C17.1002 392.586 196.186 213.5 417.1 213.5L1581.43 213.5"
+              d="M1581.43 213.5L417.1 213.5C196.186 213.5 17.1002 392.586 17.1002 613.5L17.1002 1199.5"
               stroke="#FFC655"
               strokeWidth="30"
               strokeLinecap="round"
             ></path>
             <path
               ref={pathRef2}
-              d="M17.0997 1199.5L17.0997 0"
+              d="M17.0997 0L17.0997 1199.5"
               stroke="#DD8411"
               strokeWidth="30"
               strokeLinecap="round"

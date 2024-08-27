@@ -24,7 +24,7 @@ const Header = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-wrap pt-[54px] py-[0.556vw] flex-col md:flex-row items-center gap-[2.222vw]">
+      {/* <div className="flex flex-wrap pt-[54px] py-[0.556vw] flex-col md:flex-row items-center gap-[2.222vw]">
         <Link
           href="/"
           className="flex title-font font-medium items-center text-white mb-4 md:mb-0"
@@ -63,7 +63,7 @@ const Header = () => {
           </span>{" "}
           <IoMdArrowRoundForward size={16} />
         </button>
-      </div>
+      </div> */}
     </header>
   );
 };
