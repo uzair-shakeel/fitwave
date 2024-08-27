@@ -5,7 +5,7 @@ import { IoIosAirplane } from "react-icons/io";
 const GetStarted = () => {
   return (
     <div className="w-[94.444vw] mx-auto flex justify-center items-center min-h-screen py-[150px]">
-      <div className="flex overflow-hidden rounded-[1.389vw] h-[36.181vw]">
+      <div className="flex overflow-hidden rounded-[1.389vw] h-[36.181vw] w-full">
         {/* Left Section */}
         <div className="shadow-lg bg-orangish p-7 flex flex-col justify-between items-center">
           <img
@@ -64,17 +64,29 @@ const GetStarted = () => {
             </div>
 
             <div className="flex justify-between">
-              <div>
-                <p className="uppercase text-gray-500">Status</p>
-                <p className="text-xl font-bold">NOW BOARDING</p>
+              <div className="flex flex-col w-[41%]">
+                <p className="uppercase text-[0.833vw] h-[1.389vw] font-[600] leading-[100%] text-[#b4afaf] border-b border-[#b4afaf]">
+                  Status
+                </p>
+                <p className="text-[1.25vw] font-[600] leading-[100%] pt-[1.042vw] text-blackish border-r border-[#b4afaf] w-full h-[5.556vw]">
+                  NOW BOARDING
+                </p>
               </div>
-              <div className="text-center">
-                <p className="uppercase text-gray-500">Seat</p>
-                <p className="text-xl font-bold">1A</p>
+              <div className="w-[32%]">
+                <p className="uppercase ps-[1.667vw] h-[1.389vw] text-[0.833vw] font-[600] leading-[100%] text-[#b4afaf] border-b border-[#b4afaf]">
+                  Seat
+                </p>
+                <p className="text-[1.25vw] font-[600] ps-[1.667vw] leading-[100%] text-blackish pt-[1.042vw] border-r border-[#b4afaf] w-full h-[5.556vw]">
+                  1A
+                </p>
               </div>
-              <div className="text-right">
-                <p className="uppercase text-gray-500">Group</p>
-                <p className="text-xl font-bold">FIRST CLASS</p>
+              <div className="text-right w-[27%]">
+                <p className="uppercase ps-[1.667vw] h-[1.389vw] text-[0.833vw] font-[600] leading-[100%] text-[#b4afaf] border-b border-[#b4afaf]">
+                  Group
+                </p>
+                <p className="text-[1.25vw] font-[600] leading-[100%] text-blackish pt-[1.042vw] w-full h-[5.556vw]">
+                  FIRST CLASS
+                </p>
               </div>
             </div>
 
@@ -87,12 +99,12 @@ const GetStarted = () => {
                 />
               </div>
               <div className="w-[37.569vw]">
-                <p className="text-[1.25vw] leading-[125%] tracking-[-0.02em] ">
+                <p className="text-[1.25vw] text-[#192227] leading-[125%] tracking-[-0.02em] ">
                   Runway's white glove service and intuitive design will get you
                   up and running in a matter of hours—not weeks or months.
                   Complex models welcome—we've seen it all.
                 </p>
-                <p className="text-[0.694vw] leading-[128%] text-blackish mt-[1.25vw]  pb-[0.278vw]">
+                <p className="text-[0.694vw] text-[#192227] leading-[128%] mt-[1.25vw]  pb-[0.278vw]">
                   We’ll use the information you provide consistent with our{" "}
                   <a className="text-[#2c8ac0] underline">Privacy Policy</a>
                 </p>
@@ -107,58 +119,55 @@ const GetStarted = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex shadow-lg  ms-[1.40vw]">
+        <div className="flex shadow-lg w-full ms-[1.40vw]">
           <img
             className="h-full me-[-0.5px]"
             src="/assets/breakpoint.webp"
             alt="breakpoint"
           />
 
-          <div className="bg-[#fdfcfc] py-[2.083vw] pe-[1.389vw] flex flex-col justify-between">
+          <div className="bg-[#fdfcfc] w-full py-[2.083vw] pe-[1.389vw] flex flex-col">
             <div className="flex justify-between items-center">
-              <p className="text-gray-500"># RNW5147</p>
-              <p className="text-gray-500">DATE 26 AUG. 2024</p>
+              <p className="text-blackish text-[1.25vw] font-[600] leading-[100%] uppercase">
+                <span className="text-[#6b7280]">#</span> RNW5147
+              </p>
+              <p className="text-blackish text-[1.25vw] font-[600] leading-[100%] uppercase">
+                <span className="text-[#6b7280]">DATE</span> 27 AUG. 2024
+              </p>
             </div>
 
-            <div className="mt-6">
+            <div className="flex flex-col justify-between mt-auto mb-[2.083vw] px-[0.347vw] min-h-[15.417vw]">
               <input
-                className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
+                className="border-b-2 border-[#b4afaf] text-[1.25vw] w-full font-[600] leading-[100%] tracking-[-0.03em] pb-[1.042vw] focus:outline-none"
                 type="text"
                 placeholder="First Name"
               />
               <input
-                className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
+                className="border-b-2 border-[#b4afaf] text-[1.25vw] w-full font-[600] leading-[100%] tracking-[-0.03em] pb-[1.042vw] focus:outline-none"
                 type="text"
                 placeholder="Last Name"
               />
               <input
-                className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
+                className="border-b-2 border-[#b4afaf] text-[1.25vw] w-full font-[600] leading-[100%] tracking-[-0.03em] pb-[1.042vw] focus:outline-none"
                 type="email"
                 placeholder="Work Email"
               />
               <input
-                className="border-b-2 border-gray-300 w-full mb-4 py-2 focus:outline-none"
+                className="border-b-2 border-[#b4afaf] text-[1.25vw] w-full font-[600] leading-[100%] tracking-[-0.03em] pb-[1.042vw] focus:outline-none"
                 type="text"
                 placeholder="Job Title"
               />
             </div>
 
-            <button className="bg-yellow-500 text-white py-3 mt-4 flex items-center justify-center rounded">
+            <button className="bg-orangish h-[10.417vw] text-blackish text-[2.431vw] font-[600] leading-[90%] tracking-[-0.03em] gap-[1.528vw] py-[2.778vw] rounded-[1.389vw] flex items-center justify-center">
               Get Access
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-6 h-6 ml-2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+              <span className="bg-blackish w-[4.861vw] h-full flex items-center justify-center rounded-full">
+                <img
+                  className="w-[2.153vw]"
+                  src="/assets/arrow-right.svg"
+                  alt="arrow-right"
                 />
-              </svg>
+              </span>
             </button>
           </div>
         </div>
