@@ -1,23 +1,50 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const HeroSection = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  const handleScroll = () => {
-    const maxScroll = 500; // Adjust this to control how much the user can scroll to expand the image
-    const currentScroll = window.scrollY;
-
-    // Update scrollY state only until maxScroll
-    setScrollY(Math.min(currentScroll, maxScroll));
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".image-section",
+        start: "top top", // Start when the top of the trigger hits the top of the viewport
+        end: "top 60%", // Increase the end point to create more scroll space for the animation
+        scrub: 2, // Smooth scrub
+        markers: true, // Markers for debugging
+        pin: true, // Pin the section to simulate a fixed position
+        pinSpacing: false, // Remove extra spacing added by pinning
+      },
+    });
+    // First width increase to 50%
+    tl.fromTo(
+      ".image-section",
+      { width: "30%", right: "0" }, // Start from 30%
+      {
+        width: "50%", // Increase to 50%
+        duration: 2,
+      }
+    );
+    // Second width increase to 100%
+    tl.to(".image-section", {
+      width: "100%", // Finally increase to 100%
+      duration: 2,
+    });
+    // Adjust section height to simulate pinning effect
+    gsap.to(".image-section", {
+      height: "100vh", // Ensure section height stays at 100vh
+      scrollTrigger: {
+        trigger: ".image-section",
+        start: "top top",
+        end: "+=2000", // Adjust based on scroll length
+        scrub: 2,
+        markers: true,
+        pin: true,
+        pinSpacing: false,
+      },
+    });
   }, []);
 
   return (
@@ -32,19 +59,13 @@ const HeroSection = () => {
             your business for everyone on your team.
           </p>
         </div>
-        <div
-          className="absolute top-0 right-0 h-screen bg-blue-100"
-          style={{
-            width: `${30 + (scrollY / 500) * 70}%`, // Changes from 30% to 100%
-            transition: "width 0.2s ease", // Smooth transition
-          }}
-        >
+        <div className="absolute top-0 right-0 h-screen bg-blue-100 hero-image-container image-section">
           <Image
-            src="/path-to-your-image.jpg"
+            src="/public/OIP.jpeg"
             alt="Runway Financial App"
             layout="fill"
             objectFit="cover"
-            className="rounded-lg"
+            className="rounded-lg "
           />
         </div>
       </div>
