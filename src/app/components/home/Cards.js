@@ -13,7 +13,7 @@ const Cards = () => {
     gsap.fromTo(
       sections,
       {
-        y: "100vh",
+        y: "120vh",
       },
       {
         y: "0",

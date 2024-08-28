@@ -1,12 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoIosAirplane } from "react-icons/io";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState("Meet Runway");
+  const sectionsRef = useRef([]);
 
   const videos = {
-    "Meet Runway": "/assets/videos/meet-runway.webm", // Replace with your actual video paths
+    "Meet Runway": "/assets/videos/meet-runway.webm",
     Integrations: "/assets/videos/integration.webm",
     Modeling: "/assets/videos/modeling.webm",
     "Scenario Planning": "/assets/videos/scenario-planning.webm",
@@ -14,10 +19,32 @@ export default function Tabs() {
     "Ambient Intelligence": "/assets/videos/intelligence.webm",
   };
 
+  useEffect(() => {
+    // GSAP ScrollTrigger setup
+    const pinTrigger = ScrollTrigger.create({
+      trigger: ".pin-wrapper", // Pin the entire section wrapper
+      start: "top top", // Pin the section when it hits the top of the viewport
+      end: "+=100vh", // Pin the section for a specific distance (adjust as needed)
+      pin: true, // Pin the section
+      pinSpacing: false, // Disable additional spacing
+      onUpdate: (self) => {
+        const index = Math.floor(
+          self.progress * (sectionsRef.current.length - 1)
+        );
+        setSelectedTab(Object.keys(videos)[index]);
+      },
+    });
+
+    // Cleanup function
+    return () => {
+      pinTrigger.kill();
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen pt-[50px] pb-[140px]">
-      <div className="flex gap-[0.694vw] mx-auto max-w-[1411.2px]">
-        {/* Tabs */}
+    <div className="min-h-screen pt-[50px] pb-[140px]">
+      <div className="pin-wrapper flex gap-[0.694vw] mx-auto max-w-[1411.2px]">
+        {/* Tabs Section */}
         <div className="bg-blackish text-white w-[32.292vw] h-[41.667vw] px-[1.944vw] rounded-[1.389vw] flex flex-col justify-between">
           <div className="flex flex-col justify-between h-full">
             {selectedTab === "Meet Runway" && (
@@ -36,204 +63,119 @@ export default function Tabs() {
               </div>
             )}
             <nav className="pb-[2px]">
-              <button
-                onClick={() => setSelectedTab("Integrations")}
-                className={`flex items-center w-full text-[1.736vw] h-[3.5vw] font-[600] leading-[100%] tracking-[-0.03em] text-left hover:text-white text-[#4a5357] border-t border-[#4a5357] border-opacity-[0.9] ${
-                  selectedTab === "Integrations" ? "text-white" : ""
-                }`}
-              >
-                Integrations
-              </button>
-              {selectedTab === "Integrations" && (
-                <div className="flex flex-col gap-[2.083vw]">
-                  <h2 className="text-[2.431vw] leading-[1] tracking-[-0.03em] text-white font-[600] w-fit">
-                    <span className="text-orangish">Automate</span> actuals from
-                    all your business tools.
-                  </h2>
-                  <div className="relative text-[1.042vw] text-[#4a5357] leading-[100%] font-[600] tracking-[-0.02em]">
-                    {/* Airplane Icon */}
-                    <span className="absolute -top-[1.2vw] left-[15vw] text-orangish p-[0.694vw] w-[50px] flex justify-center items-center">
-                      <IoIosAirplane className="w-[28px] h-[28px]" />
-                    </span>
+              {Object.keys(videos).map((tabName, index) => (
+                <div
+                  key={tabName}
+                  ref={(el) => (sectionsRef.current[index] = el)}
+                >
+                  <button
+                    onClick={() => setSelectedTab(tabName)}
+                    className={`flex items-center w-full text-[1.736vw] h-[3.5vw] font-[600] leading-[100%] tracking-[-0.03em] text-left hover:text-white text-[#4a5357] border-t border-[#4a5357] border-opacity-[0.9] ${
+                      selectedTab === tabName ? "text-white" : ""
+                    }`}
+                  >
+                    {tabName}
+                  </button>
+                  {selectedTab === tabName && (
+                    <div className="flex flex-col gap-[2.083vw]">
+                      <h2 className="text-[2.431vw] leading-[1] tracking-[-0.03em] text-white font-[600] w-fit">
+                        {tabName === "Integrations" && (
+                          <>
+                            <span className="text-orangish">Automate</span>{" "}
+                            actuals from all your business tools.
+                          </>
+                        )}
+                        {tabName === "Modeling" && (
+                          <>
+                            A{" "}
+                            <span className="text-[#ade988]">
+                              joyful modeling experience
+                            </span>{" "}
+                            that prepares you for scale.
+                          </>
+                        )}
+                        {tabName === "Scenario Planning" && (
+                          <>
+                            Answer{" "}
+                            <span className="text-[#2c8ac0]">“what if“</span>{" "}
+                            questions and connect numbers with your business
+                            intent.
+                          </>
+                        )}
+                        {tabName === "Reports" && (
+                          <>
+                            Custom reports and{" "}
+                            <span className="text-[#c23e2b]">dashboards</span>{" "}
+                            are as simple as adding to your cart.
+                          </>
+                        )}
+                        {tabName === "Ambient Intelligence" && (
+                          <>
+                            <span className="text-[#d6a529]">Data-driven</span>{" "}
+                            insights for a brighter future.
+                          </>
+                        )}
+                      </h2>
+                      <div className="relative text-[1.042vw] text-[#4a5357] leading-[100%] font-[600] tracking-[-0.02em]">
+                        {/* Airplane Icon */}
+                        <span
+                          className={`absolute -top-[1.2vw] left-[15vw] p-[0.694vw] w-[50px] flex justify-center items-center ${
+                            tabName === "Integrations"
+                              ? "text-orangish"
+                              : tabName === "Modeling"
+                              ? "text-[#ade988]"
+                              : tabName === "Scenario Planning"
+                              ? "text-[#2c8ac0]"
+                              : tabName === "Reports"
+                              ? "text-[#c23e2b]"
+                              : tabName === "Ambient Intelligence"
+                              ? "text-[#d6a529]"
+                              : ""
+                          }`}
+                        >
+                          <IoIosAirplane className="w-[28px] h-[28px]" />
+                        </span>
 
-                    {/* Border with Text */}
-                    <div className="flex items-center gap-[1.042vw]">
-                      <span>AUT</span>
-                      <span className="w-[15.972vw] border-b border-dashed border-[#4a5357]"></span>
-                      <span>ACT</span>
+                        {/* Border with Text */}
+                        <div className="flex items-center gap-[1.042vw]">
+                          <span>AUT</span>
+                          <span className="w-[15.972vw] border-b border-dashed border-[#4a5357]"></span>
+                          <span>ACT</span>
+                        </div>
+                      </div>
+                      <p className="text-[1.042vw] tracking-[-0.01em] leading-[125%] font-[400] text-white w-[28.819vw]">
+                        {tabName === "Integrations" &&
+                          "Gone are the days of copy and pasting actuals from 12 different places every month. Runway connects with your accounting, HRIS, data warehouse tools, and more to automatically keep your forecasts up to date with new actuals."}
+                        {tabName === "Modeling" &&
+                          "Write formulas that humans can read. Most Runway models are 50x simpler than Excel, which makes scaling and tracing values a breeze."}
+                        {tabName === "Scenario Planning" &&
+                          "Easily modify forecasts and answer key questions that would take days or weeks in a spreadsheet in minutes."}
+                        {tabName === "Reports" &&
+                          "Our reports and dashboards builder is intuitive and makes creating the custom reports you need easier than ever."}
+                        {tabName === "Ambient Intelligence" &&
+                          "Harness the power of data-driven insights to unlock new opportunities and create a brighter, more efficient future."}
+                      </p>
                     </div>
-                  </div>
-                  <p className="text-[1.042vw] tracking-[-0.01em] leading-[125%] font-[400] text-white w-[28.819vw]">
-                    Gone are the days of copy and pasting actuals from 12
-                    different places every month. Runway connects with your
-                    accounting, HRIS, data warehouse tools, and more to
-                    automatically keep your forecasts up to date with new
-                    actuals.
-                  </p>
+                  )}
                 </div>
-              )}
-              <button
-                onClick={() => setSelectedTab("Modeling")}
-                className={`flex items-center w-full text-[1.736vw] h-[3.5vw] font-[600] leading-[100%] tracking-[-0.03em] text-left hover:text-white text-[#4a5357] border-t border-[#4a5357] border-opacity-[0.9] ${
-                  selectedTab === "Modeling" ? "text-white" : ""
-                }`}
-              >
-                Modeling
-              </button>
-              {selectedTab === "Modeling" && (
-                <div className="flex flex-col gap-[2.083vw]">
-                  <h2 className="text-[2.431vw] leading-[1] tracking-[-0.03em] text-white font-[600] w-fit">
-                    A{" "}
-                    <span className="text-[#ade988]">
-                      joyful modeling experience
-                    </span>{" "}
-                    that prepares you for scale.
-                  </h2>
-                  <div className="relative text-[1.042vw] text-[#4a5357] leading-[100%] font-[600] tracking-[-0.02em]">
-                    {/* Airplane Icon */}
-                    <span className="absolute -top-[1.2vw] left-[15vw] text-[#ade988] p-[0.694vw] w-[50px] flex justify-center items-center">
-                      <IoIosAirplane className="w-[28px] h-[28px]" />
-                    </span>
-
-                    {/* Border with Text */}
-                    <div className="flex items-center gap-[1.042vw]">
-                      <span>AUT</span>
-                      <span className="w-[15.972vw] border-b border-dashed border-[#4a5357]"></span>
-                      <span>ACT</span>
-                    </div>
-                  </div>
-                  <p className="text-[1.042vw] tracking-[-0.01em] leading-[125%] font-[400] text-white w-[28.819vw]">
-                    Write formulas that humans can read. Most Runway models are
-                    50x simpler than Excel, which makes scaling and tracing
-                    values a breeze.
-                  </p>
-                </div>
-              )}
-              <button
-                onClick={() => setSelectedTab("Scenario Planning")}
-                className={`flex items-center w-full text-[1.736vw] h-[3.5vw] font-[600] leading-[100%] tracking-[-0.03em] text-left hover:text-white text-[#4a5357] border-t border-[#4a5357] border-opacity-[0.9] ${
-                  selectedTab === "Scenario Planning" ? "text-white" : ""
-                }`}
-              >
-                Scenario Planning
-              </button>
-              {selectedTab === "Scenario Planning" && (
-                <div className="flex flex-col gap-[2.083vw]">
-                  <h2 className="text-[2.431vw] leading-[1] tracking-[-0.03em] text-white font-[600] w-fit">
-                    Answer <span className="text-[#2c8ac0]">“what if“</span>{" "}
-                    questions and connect numbers with your business intent.
-                  </h2>
-                  <div className="relative text-[1.042vw] text-[#4a5357] leading-[100%] font-[600] tracking-[-0.02em]">
-                    {/* Airplane Icon */}
-                    <span className="absolute -top-[1.2vw] left-[15vw] text-[#2c8ac0] p-[0.694vw] w-[50px] flex justify-center items-center">
-                      <IoIosAirplane className="w-[28px] h-[28px]" />
-                    </span>
-
-                    {/* Border with Text */}
-                    <div className="flex items-center gap-[1.042vw]">
-                      <span>AUT</span>
-                      <span className="w-[15.972vw] border-b border-dashed border-[#4a5357]"></span>
-                      <span>ACT</span>
-                    </div>
-                  </div>
-                  <p className="text-[1.042vw] tracking-[-0.01em] leading-[125%] font-[400] text-white w-[28.819vw]">
-                    Compare plans and outcomes to find the best strategies to
-                    hit your goals. Exclusive to Runway, Plans explain why
-                    numbers change, capturing context that spreadsheets alone
-                    cannot. Drag and drop to play with Plans, instead of fussing
-                    with D17 and Sheet8!Q4823
-                  </p>
-                </div>
-              )}
-              <button
-                onClick={() => setSelectedTab("Reports")}
-                className={`flex items-center w-full text-[1.736vw] h-[3.5vw] font-[600] leading-[100%] tracking-[-0.03em] text-left hover:text-white text-[#4a5357] border-t border-[#4a5357] border-opacity-[0.9] ${
-                  selectedTab === "Reports" ? "text-white" : ""
-                }`}
-              >
-                Reports
-              </button>
-              {selectedTab === "Reports" && (
-                <div className="flex flex-col gap-[2.083vw]">
-                  <h2 className="text-[2.431vw] leading-[1] tracking-[-0.03em] text-white font-[600] w-fit">
-                    Create beautiful and{" "}
-                    <span className="text-[#b08ce1]">interactive reports</span>{" "}
-                    in seconds that never go out-of-date.
-                  </h2>
-                  <div className="relative text-[1.042vw] text-[#4a5357] leading-[100%] font-[600] tracking-[-0.02em]">
-                    {/* Airplane Icon */}
-                    <span className="absolute -top-[1.2vw] left-[15vw] text-[#b08ce1] p-[0.694vw] w-[50px] flex justify-center items-center">
-                      <IoIosAirplane className="w-[28px] h-[28px]" />
-                    </span>
-
-                    {/* Border with Text */}
-                    <div className="flex items-center gap-[1.042vw]">
-                      <span>AUT</span>
-                      <span className="w-[15.972vw] border-b border-dashed border-[#4a5357]"></span>
-                      <span>ACT</span>
-                    </div>
-                  </div>
-                  <p className="text-[1.042vw] tracking-[-0.01em] leading-[125%] font-[400] text-white w-[28.819vw]">
-                    Prepare board updates and build dashboards with live charts,
-                    tables, and text in seconds. You have full control over who
-                    sees what. You can even embed videos and live content from
-                    the web to tell a compelling story and give stakeholders the
-                    context they need.
-                  </p>
-                </div>
-              )}
-              <button
-                onClick={() => setSelectedTab("Ambient Intelligence")}
-                className={`flex items-center w-full text-[1.736vw] h-[3.5vw] font-[600] leading-[100%] tracking-[-0.03em] text-left hover:text-white text-[#4a5357] border-t border-[#4a5357] border-opacity-[0.9] ${
-                  selectedTab === "Ambient Intelligence" ? "text-white" : ""
-                }`}
-              >
-                Ambient Intelligence
-              </button>
-              {selectedTab === "Ambient Intelligence" && (
-                <div className="flex flex-col gap-[2.083vw]">
-                  <h2 className="text-[2.431vw] leading-[1] tracking-[-0.03em] text-white font-[600] w-fit">
-                    Get the <span className="text-[#f06246]">insights</span> you
-                    need without having to ask.
-                  </h2>
-                  <div className="relative text-[1.042vw] text-[#4a5357] leading-[100%] font-[600] tracking-[-0.02em]">
-                    {/* Airplane Icon */}
-                    <span className="absolute -top-[1.2vw] left-[15vw] text-[#f06246] p-[0.694vw] w-[50px] flex justify-center items-center">
-                      <IoIosAirplane className="w-[28px] h-[28px]" />
-                    </span>
-
-                    {/* Border with Text */}
-                    <div className="flex items-center gap-[1.042vw]">
-                      <span>AUT</span>
-                      <span className="w-[15.972vw] border-b border-dashed border-[#4a5357]"></span>
-                      <span>ACT</span>
-                    </div>
-                  </div>
-                  <p className="text-[1.042vw] tracking-[-0.01em] leading-[125%] font-[400] text-white w-[28.819vw]">
-                    Runway proactively provides clear explanations for your
-                    drivers, highlights budget variances, summarizes scenario
-                    differences, and more. This ensures you always have the
-                    right information at your fingertips, empowering you to make
-                    the best decisions possible. Sign up to be considered for
-                    early access.
-                  </p>
-                </div>
-              )}
+              ))}
             </nav>
           </div>
         </div>
 
-        {/* Main Content Area */}
-        <div className="flex-1 p-2 w-[50.903vw] h-[41.667vw] bg-white rounded-[1.389vw] overflow-hidden">
-          <div className="w-full h-full">
-            <video
-              src={videos[selectedTab]}
-              alt={selectedTab}
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-            />
-          </div>
+        {/* Video Section */}
+        <div className="bg-white w-[67.708vw] h-[41.667vw] px-[1.944vw] rounded-[1.389vw]">
+          <video
+            key={selectedTab}
+            className="w-full h-full object-cover rounded-[1.389vw]"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src={videos[selectedTab]} type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
