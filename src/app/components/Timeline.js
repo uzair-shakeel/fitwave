@@ -9,70 +9,26 @@ gsap.registerPlugin(ScrollTrigger);
 const Timeline = () => {
   const pathRef0 = useRef(null);
   const pathRef1 = useRef(null);
-  // useEffect(() => {
-  //   const pathLength0 = pathRef0.current.getTotalLength();
-  //   const pathLength1 = pathRef1.current.getTotalLength();
-
-  //   gsap.set(pathRef0.current, {
-  //     strokeDasharray: pathLength0,
-  //     strokeDashoffset: pathLength0, // Start with the path hidden
-  //     stroke: "#FFC655",
-  //   });
-
-  //   // Initialize pathRef1 with strokeDasharray and strokeDashoffset
-  //   gsap.set(pathRef1.current, {
-  //     strokeDasharray: pathLength1,
-  //     strokeDashoffset: pathLength1, // Start with the path hidden
-  //     stroke: "#DD8411",
-  //   });
-
-  //   gsap.to(pathRef0.current, {
-  //     strokeDashoffset: 0, // Animate to fully visible
-  //     duration: 1,
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: pathRef0.current,
-  //       start: "top 90%",
-  //       end: "bottom center",
-  //       scrub: true,
-  //       markers: true, // Remove or set to false for production
-  //     },
-  //   });
-
-  //   gsap.to(pathRef1.current, {
-  //     strokeDashoffset: 0, // Animate to fully visible
-  //     duration: 1,
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: pathRef1.current,
-  //       start: "top 80%",
-  //       end: "bottom center",
-  //       scrub: true,
-  //       markers: true,
-  //     },
-  //   });
-  // }, []);
-
   return (
-    <>
+    <div className="relative max-w-[1920px] mx-auto flex flex-col gap-[17.361vw] pt-[450px] pb-[160px]">
       <svg
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2069 5746"
-        className="Desktop__Paths-sc-4c7b19-1 zbzgA"
+        className="Desktop__Paths-sc-4c7b19-1 zbzgA left-[-460px] top-[140px] absolute"
       >
         <path
           d="M572 15L572 5531C572 5641.46 482.457 5731 372 5731L14.9995 5731"
           stroke="#4A5357"
           strokeWidth="30"
           strokeLinecap="round"
-        />
+        ></path>
         <path
           d="M2013.51 5464H772C661.543 5464 572 5374.46 572 5264L572 362C572 251.543 661.543 162 772 162H2054"
           stroke="#4A5357"
           strokeWidth="30"
           strokeLinecap="round"
-        />
+        ></path>
         <path
           className="timeline-path-1"
           d="M572 15L572 5531C572 5641.46 482.457 5731 372 5731L14.9995 5731"
@@ -80,10 +36,10 @@ const Timeline = () => {
           strokeWidth="30"
           strokeLinecap="round"
           style={{
-            strokeDashoffset: "0.00096px",
-            strokeDasharray: "122.625px, 6064.68px",
+            strokeDashoffset: "0.000986px",
+            strokeDasharray: "43.6318px, 6143.67px",
           }}
-        />
+        ></path>
         <path
           className="timeline-path-2"
           d="M2013.51 5464H772C661.543 5464 572 5374.46 572 5264L572 362C572 251.543 661.543 162 772 162H2054"
@@ -91,13 +47,15 @@ const Timeline = () => {
           strokeWidth="30"
           strokeLinecap="round"
           style={{
-            strokeDashoffset: "-6746.49px",
-            strokeDasharray: "1307.33px, 6746.79px",
+            strokeDashoffset: "-7017.95px",
+            strokeDasharray: "1035.87px, 7018.25px",
           }}
-        />
+        ></path>
       </svg>
-
-      <div className="max-w-[1920px] mx-auto flex flex-col gap-[17.361vw] py-[160px]">
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          2007
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img1.webp"
           heading="Why do we care so much?"
@@ -115,7 +73,12 @@ const Timeline = () => {
             </span>
           </p>
         </TimelineCard>
+      </div>
 
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          2007
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img2.webp"
           heading="Finance has always made me feel insecure"
@@ -130,7 +93,12 @@ const Timeline = () => {
             metric at Postmates.
           </p>
         </TimelineCard>
+      </div>
 
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          2007
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img3.webp"
           heading="Fast Forward"
@@ -146,7 +114,12 @@ const Timeline = () => {
             company and hibernate. And so that's what we did.
           </p>
         </TimelineCard>
+      </div>
 
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          2020
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img4.webp"
           heading="Is this the best we can do?"
@@ -167,7 +140,12 @@ const Timeline = () => {
             Runway.
           </p>
         </TimelineCard>
+      </div>
 
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          2020
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img5.webp"
           heading="Getting off the ground"
@@ -182,7 +160,12 @@ const Timeline = () => {
             Scott Belsky, Soleio Cuervo, Balaji Srinivasan, and many others.
           </p>
         </TimelineCard>
+      </div>
 
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          2021
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img6.webp"
           heading="Encountering turbulence"
@@ -200,7 +183,12 @@ const Timeline = () => {
             of data within enterprises.
           </p>
         </TimelineCard>
+      </div>
 
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          2021
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img7.webp"
           heading="Building a culture of shared values"
@@ -267,7 +255,12 @@ const Timeline = () => {
             </div>
           </div>
         </TimelineCard>
+      </div>
 
+      <div className="flex items-center gap-[2.639vw] px-[2vw] relative z-[30]">
+        <div className="min-w-[5.208vw] min-h-[5.208vw] rounded-full text-[1.25vw] text-[#2c353a] font-[600] leading-[100%] uppercase border-[5px] border-[#4a5357] bg-blackish flex items-center justify-center">
+          Today
+        </div>
         <TimelineCard
           imageSrc="/assets/timeline-img8.webp"
           heading="Runway Today"
@@ -289,7 +282,7 @@ const Timeline = () => {
           </p>
         </TimelineCard>
       </div>
-    </>
+    </div>
   );
 };
 
