@@ -122,7 +122,7 @@ const BetterWay = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 3325"
-        className="Desktop__Paths-sc-uvilzz-1 fgVVhV"
+        className="Desktop__Paths-sc-uvilzz-1 fgVVhV absolute"
       >
         <g clipPath="url(#clip0_4897_320934)">
           <path
