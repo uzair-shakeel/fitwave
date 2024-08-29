@@ -102,7 +102,7 @@ const ReadyforTakeoff = () => {
               </span>
             </span>
           </div>
-          <div className="sm:w-[64.931vw] w-full min-h-[17.708vw] rounded-[1.389vw] border border-[#fdfcfc]">
+          <div className="sm:w-[64.931vw] w-full min-h-[17.708vw] sm:rounded-[1.389vw] rounded-[5.333vw] overflow-hidden border border-[#fdfcfc]">
             <div className="sm:h-[5.833vw] h-[11.467vw] border-b border-gray-600 ">
               <Marquee
                 {...settings1}
@@ -149,7 +149,7 @@ const ReadyforTakeoff = () => {
                 </div>
               </Marquee>
             </div>
-            <div className="sm:h-[5.833vw] h-[11.467vw] border-b border-gray-600 ">
+            <div className="sm:h-[5.833vw] h-[11.467vw]">
               <Marquee
                 {...settings3}
                 direction="left"
