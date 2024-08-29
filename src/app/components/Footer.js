@@ -53,7 +53,7 @@ const Footer = () => {
         <img className="w-[100%]" src="/assets/logo.png" alt="logo" />
       </div>
       <div className="mx-auto flex flex-col sm:gap-[0.694vw] gap-[2.667vw] sm:flex-row justify-between px-[15px]">
-        <div className="sm:order-1 order-2 bg-[#f9a600] flex flex-grow flex-col text-blackish pt-[15px] sm:rounded-[1.389vw] rounded-[5.333vw] md:max-w-[27.153vw] sm:min-h-auto min-h-[59.2vw] sm:max-w-[38.184vw]  min-h-full justify-between">
+        <div className="sm:order-1 order-2 bg-[#f9a600] flex flex-grow flex-col text-blackish pt-[15px] sm:rounded-[1.389vw] rounded-[5.333vw] md:max-w-[27.153vw] sm:min-h-0 min-h-[59.2vw] sm:max-w-[38.184vw]  min-h-full justify-between">
           <div className="flex flex-col gap-[7px]">
             <div className="sm:flex hidden justify-center items-center bg-[#192227] rounded-full w-[3.472vw] h-[3.472vw] mx-[15px]">
               <svg
