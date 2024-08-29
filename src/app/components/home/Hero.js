@@ -102,7 +102,7 @@ const HeroSection = () => {
           >
             <img
               className="h-[25px] w-auto"
-              src="/assets/logo.png"
+              src="/assets/hero.webp"
               alt="logo"
             />
           </Link>

@@ -13,7 +13,7 @@ const Cards = () => {
     gsap.fromTo(
       sections,
       {
-        y: "120vh",
+        y: "100vh",
       },
       {
         y: "0",
@@ -33,8 +33,8 @@ const Cards = () => {
 
   return (
     <section className="card-section bg-blue-300 min-h-screen py-[140px] px-[15px]">
-      <div className="flex relative flex-col gap-[100px]">
-        <div className="card-container absolute top-[-60px] left-1/2 -translate-x-1/2 rounded-[1.389vw] w-[55.139vw] h-[22.153vw] mx-auto rotate-[3.00023deg]">
+      <div className="flex relative flex-col  gap-[100px]">
+        <div className="card-container absolute top-[-100px] left-1/2 -translate-x-1/2 rounded-[1.389vw] w-[55.139vw] h-[22.153vw] mx-auto rotate-[3.00023deg]">
           <img src="/assets/card1.webp" alt="card" />
         </div>
         <div className="card-container  absolute top-[-30px] left-1/2 -translate-x-1/2 rounded-[1.389vw] w-[55.139vw] h-[22.153vw] mx-auto rotate-[-4deg]">

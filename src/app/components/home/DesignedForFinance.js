@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+// Register the ScrollTrigger plugin with GSAP
+gsap.registerPlugin(ScrollTrigger);
+
 import { BsSpeedometer } from "react-icons/bs";
 
 const DesignedForFinance = () => {
+  useEffect(() => {
+    // GSAP animation configuration
+    gsap.fromTo(
+      ".feature-card",
+      { y: 100, opacity: 0 }, // initial state with tilt
+      {
+        y: 0,
+        opacity: 1,
+        rotate: 0, // remove tilt
+        duration: 0.9,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".feature-card",
+          start: "top bottom-=100px",
+          end: "top 40%",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+  
   const features = [
     {
       icon: <BsSpeedometer className="w-[1.9vw] h-[1.9vw]" />,
@@ -31,7 +58,7 @@ const DesignedForFinance = () => {
   ];
 
   return (
-    <div className="bg-blackish py-16 mx-auto xl:ps-[200px] ps-[8.984vw] pe-[15px]">
+    <div className="bg-blackish py-[7%] mx-auto xl:ps-[200px] ps-[8.984vw] pe-[15px]">
       <h2 className="text-white text-[7.292vw] font-[600] leading-[90%] tracking-[-0.04em] mb-[1.528vw] max-w-[50.694vw] pt-[0.694vw]">
         Designed for Finance
       </h2>
@@ -39,7 +66,7 @@ const DesignedForFinance = () => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-orangish px-[15px] rounded-[1.111vw] shadow-md w-full md:max-w-[24.5vw] flex flex-col justify-between items-start"
+            className="feature-card bg-orangish px-[15px] rounded-[1.111vw] shadow-md w-full md:max-w-[24.5vw] flex flex-col justify-between items-start"
           >
             <div>
               <div className="pt-[1.389vw] pb-[1.736vw]">

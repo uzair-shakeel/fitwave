@@ -21,18 +21,24 @@ export default function Tabs() {
   };
 
   useEffect(() => {
+    let currentIndex = 0;
+
     // GSAP ScrollTrigger setup
     const pinTrigger = ScrollTrigger.create({
       trigger: ".pin-wrapper",
       start: "top 20%",
       end: "+=100vh",
       pin: true,
+      scrub: 2,
       pinSpacing: false,
       onUpdate: (self) => {
         const index = Math.floor(
           self.progress * (sectionsRef.current.length - 1)
         );
-        setSelectedTab(Object.keys(videos)[index]);
+        if (index !== currentIndex) {
+          currentIndex = index;
+          setSelectedTab(Object.keys(videos)[index]);
+        }
       },
     });
 
@@ -46,8 +52,8 @@ export default function Tabs() {
     if (contentRef.current) {
       gsap.fromTo(
         contentRef.current,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+        { y: 50, opacity: 1 },
+        { y: 0, opacity: 1, duration: 1.8, ease: "back.out(1.7)" }
       );
     }
   }, [selectedTab]);

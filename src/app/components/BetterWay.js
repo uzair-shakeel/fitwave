@@ -165,7 +165,7 @@ const BetterWay = () => {
             strokeLinecap="round"
             strokeWidth="30"
           />
-          <circle
+          {/* <circle
             className="circle circle-1"
             cx="96.3359"
             cy="3287.36"
@@ -263,7 +263,7 @@ const BetterWay = () => {
               stroke="#FDFCFC"
               strokeWidth="5.2"
             />
-          </g>
+          </g> */}
         </g>
         <defs>
           <clipPath id="clip0_4897_320934">
@@ -271,7 +271,7 @@ const BetterWay = () => {
           </clipPath>
         </defs>
       </svg>
-      <div className="lg:w-[40.347vw] md:w-[72.852vw] flex flex-col mb-[30px] py-[27.778vw] ps-[3.125vw]">
+      <div className="lg:w-[40.347vw] md:w-[72.852vw] flex flex-col mb-[14%] py-[27.778vw] ps-[3.125vw]">
         {/* Icon and Heading */}
         <div className="flex justify-center items-center w-fit bg-orangish rounded-full mb-[-10px]">
           <span className="w-[74.9px] h-[74.9px] p-[5px] flex items-center justify-center">
@@ -298,7 +298,7 @@ const BetterWay = () => {
       </div>
       <DesignedForFinance />
       <BuiltForExecutives />
-      <div className="bg-blackish py-16 max-w-[1920px] mx-auto xl:ps-[200px] ps-[8.984vw] pe-[15px]">
+      <div className="bg-blackish py-[7%] max-w-[1920px] mx-auto xl:ps-[200px] ps-[8.984vw] pe-[15px]">
         <h2 className="text-white text-[7.292vw] font-[600] leading-[90%] tracking-[-0.04em] mb-[1.528vw] max-w-[50.694vw] pt-[0.694vw]">
           Built for Executives
         </h2>
